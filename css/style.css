@@ -36,3 +36,15 @@ img{
 .pieza-light{
     background-color: #FFF3B0;
 }
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .rompecabezas{
+        width: 40vh;
+        height: 40vh;
+    }
+    .pieza{
+        width: 33.4%;
+        height: 33.4%;
+        font-size: 6vh;
+    }
+  }

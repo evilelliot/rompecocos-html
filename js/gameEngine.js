@@ -1,12 +1,12 @@
 $(document).ready(function () {
     class Rompecocos{
+        primerMovimiento = true;
         columnas = 3;
         filas = 3;
         totalPiezas;
         piezas;
         coordenadasVacio = [2,2];
         indexes = [];
-    
         constructor() {
             this.totalPiezas = (this.columnas * this.filas);
             this.piezas      = $(".pieza");
@@ -75,6 +75,9 @@ $(document).ready(function () {
         // Movemos una pieza y revisamos si el juego se ha resuelto.
         onClickPieza(piezaID){
             // Cambio de estado.
+            if(this.primerMovimiento){
+                this.primerMovimiento = false;
+            }
             var audio = $("#audio")[0];
 		    audio.play();
             if(this.moverPieza(piezaID)){
@@ -82,7 +85,6 @@ $(document).ready(function () {
                     var audio = $("#win")[0];
 		            audio.play();
                     swal("🥳¡Ganaste!🥳");
-                    
                 }
             }
         }
@@ -100,7 +102,6 @@ $(document).ready(function () {
             return true;
         }   
     }
-    
     var game = new Rompecocos();//instantiate a new Game
         
 });

@@ -10,6 +10,9 @@
 <hr>
 Implementación del tradicional juego 'rompecocos' en un entorno de desarrollo web.
 
+Cómo parte de la actividad **P0U1: Práctica 00: Simulando un juego**, se ha implementado el famoso rompecabezas numérico
+usando cómo herramientas las tecnologías web de *HTML, CSS y JS*.
+
 **TODO list:**
 1. Añadir las funcionalidades de cronómetro, conteo y dificultad.
 2. Añadir temas.
@@ -17,6 +20,7 @@ Implementación del tradicional juego 'rompecocos' en un entorno de desarrollo w
 
 **Errores: **
 <hr>
+
 **[▶️ Live version here.](https://evilelliot.github.io/rompecocos-html/)**
 
 <p align="center">

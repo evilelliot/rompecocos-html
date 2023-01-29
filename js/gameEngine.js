@@ -75,9 +75,14 @@ $(document).ready(function () {
         // Movemos una pieza y revisamos si el juego se ha resuelto.
         onClickPieza(piezaID){
             // Cambio de estado.
+            var audio = $("#audio")[0];
+		    audio.play();
             if(this.moverPieza(piezaID)){
                 if(this.gameOver()){
+                    var audio = $("#win")[0];
+		            audio.play();
                     swal("🥳¡Ganaste!🥳");
+                    
                 }
             }
         }

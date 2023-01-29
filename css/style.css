@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15vh;
+    background-color: #540B0E;
+}
+img{
+    width: 100%;
+}
+.rompecabezas{
+    position: relative;
+    width: 50vh;
+    height: 50vh;    
+    border-radius: 10px;
+    border: 15px solid #335C67;
+}
+.pieza{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 33.4%;
+    height: 33.4%;
+    color: #E09F3E;
+    font-size: 10vh;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 3%;
+    cursor: pointer;
+    user-select: none;
+    transition: left 0.2s, top 0.2s;
+}
+.pieza-dark{
+    background-color: #9E2A2B ;
+}
+.pieza-light{
+    background-color: #FFF3B0;
+}

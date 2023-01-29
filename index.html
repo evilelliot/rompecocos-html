@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠Rompecocos🧠</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/38a3806765.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h3>🧠Rompecocos🧠</h3>
+    <div class = "rompecabezas">
+        <div class="pieza pieza-light">1</div>
+        <div class="pieza pieza-dark">2</div>
+        <div class="pieza pieza-light">3</div>
+        <div class="pieza pieza-light">4</div>
+        <div class="pieza pieza-dark">5</div>
+        <div class="pieza pieza-light">6</div>
+        <div class="pieza pieza-light">7</div>
+        <div class="pieza pieza-dark">8</div>
+    </div>
+    <div class="info" style="margin-top: 10px;">
+
+        <button id="play" class="btn btn-warning"><i class="fa-solid fa-play"></i></button>
+        <button id="stop" class="btn btn-warning"><i class="fa-solid fa-stop"></i></button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">🧠Rompecocos🧠</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <b>A cerca del rompecocos.</b>
+                    <p>
+                        El rompecocos es un puzzle numérico que posee piezas que deberás de ordenar en distintos patrones
+                        para poder ganar. 
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_709956-MLM44576287605_012021-W.jpg" alt="Fig. 1: Rompecocos">
+                        <p class="text-center"><i>Rompecocos tradicionales en México.</i></p>
+                        <br>
+                        Cuenta con una cantidad variante de piezas, siendo el más sencillo aquel que cuenta con 
+                        9 piezas nada más. Las reglas son básicas, una vez que has colocado las piezas en el orden elegido,
+                        habrás ganado la partida.
+                        <hr>
+                        Algunas variantes contemplan una cantidad discreta de movmientos que deberás de respetar para que tu partida
+                        pueda ser considerada válida, otros, consideran la cantidad de tiempo que le has dedicado a la partida actual.
+                        <br>
+                    </p>
+                </div>
+                <div class="container">
+                    <b><i class="fa-solid fa-gear"></i> Configuraciones.</b>
+                    <hr>
+                    <label for="#themes">Tema (colores del juego):</label>
+                    <br>
+                    <select id="themes" class="form-select" aria-label="Temas del juego.">
+                        <option selected>Básico</option>
+                        <option value="1">Pastel</option>
+                        <option value="2">Monocromático</option>
+                        <option value="3">Nocturno</option>
+                        <option value="4">Alto contraste</option>
+                    </select>
+                    <br>
+                    <span>Configuraciones extra:</span>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="chrono">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Activar cronómetro.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="count">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Activar conteo de movimientos.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="sound">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Activar sonidos.
+                        </label>
+                    </div>
+                    <hr>
+                    <button id="saveConfig" class="btn btn-success btn-block"><i class="fa-solid fa-floppy-disk"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary"><i class="fa-brands fa-github-alt"></i> Repositorio</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/gameEngine.js"></script>
+</body>
+</html>

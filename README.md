@@ -18,7 +18,8 @@ usando cómo herramientas las tecnologías web de *HTML, CSS y JS*.
 2. Añadir temas.
 3. Añadir configuración persistente.
 
-**Errores: **
+Errores:
+1. Las cookies no funcionan correctamente.
 <hr>
 
 **[▶️ Live version here.](https://evilelliot.github.io/rompecocos-html/)**

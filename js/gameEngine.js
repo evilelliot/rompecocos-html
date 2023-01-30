@@ -7,6 +7,11 @@ $(document).ready(function () {
         piezas;
         coordenadasVacio = [2,2];
         indexes = [];
+        // Datos de la partida.
+        movimientosValidos  = 0;
+        movimientosInvalidos = 0;
+        precision = 0;
+        juegoFinalizado = false;
         constructor() {
             this.totalPiezas = (this.columnas * this.filas);
             this.piezas      = $(".pieza");
@@ -44,7 +49,7 @@ $(document).ready(function () {
         moverPieza(piezaID) {
             let pieza = this.piezas[piezaID];
             let coordenadas = this.esValido(pieza);
-            if(coordenadas != null){
+            if(coordenadas != null && this.juegoFinalizado != true){
                 this.intercambioFicha(piezaID, this.coordenadasVacio[0],this.coordenadasVacio[1]);
                 this.indexes[this.coordenadasVacio[0] + this.coordenadasVacio[1] * this.columnas] = this.indexes[coordenadas[0] + coordenadas[1] * this.columnas];
                 this.coordenadasVacio[0] = coordenadas[0];
@@ -81,12 +86,25 @@ $(document).ready(function () {
             var audio = $("#audio")[0];
 		    audio.play();
             if(this.moverPieza(piezaID)){
+                this.movimientosValidos++;
+                $(".dataMovements").html("Movimientos: " + this.precision);
                 if(this.gameOver()){
+                    this.juegoFinalizado = true;
                     var audio = $("#win")[0];
 		            audio.play();
-                    swal("🥳¡Ganaste!🥳");
+                    // Calculo de precisión.
+                    this.precision = this.movimientosValidos + this.movimientosInvalidos;
+                    // swal("🥳¡Ganaste!🥳");
+                    console.log(this.precision);
+                    console.log(this.movimientosValidos);
+                    swal("Precision: " + (100 / (this.precision / this.movimientosValidos)) + "%");
+                    
                 }
+            }else{
+                console.log(this.movimientosInvalidos++);
+                $(".dataMovements").html("Movimientos: " + this.precision);
             }
+            
         }
         // Verificar si el juego se ha terminado.
         gameOver(){
@@ -102,6 +120,7 @@ $(document).ready(function () {
             return true;
         }   
     }
+   
     var game = new Rompecocos();//instantiate a new Game
         
 });

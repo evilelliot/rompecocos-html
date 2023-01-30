@@ -39,6 +39,15 @@ img{
 .pieza-light{
     background-color: var(--pieza-light);
 }
+.data{
+    width: 50vh;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: var(--fondo);
+}
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .rompecabezas{
